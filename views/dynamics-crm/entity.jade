@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  div(ng-app="app" ng-controller="AppCtrl as $ctrl")
+    h1= title
+    hr
+    p Select property and push add button
+    form.form-inline.select-prop
+      .form-group
+      label.sr-only Select property key
+      select.form-control(ng-model="curProp")
+        - each key in props
+          option(value= key)= key
+      button.btn.btn-primary(ng-click="$ctrl.addProp()") Add 
+    button.btn.btn-success.btn-generate(ng-if="$ctrl.propsList.length", ng-click="$ctrl.generate()") Generate dynamics table data
+    form.form-inline.select-prop(ng-repeat="prop in $ctrl.propsList track by $index")
+      .form-group
+        input.form-control(ng-model="prop.key" ng-disabled="true" type="text")
+      .form-group
+        input.form-control(ng-model="prop.title"  type="text") 
+      button.btn.btn-danger(ng-click="$ctrl.removeProp($index)") Remove
+  
+    table.table.table-striped.table-hover
+      thead.thead-inverse
+        tr
+          th(ng-repeat="h in $ctrl.propsList track by $index") {{ h.title }}
+      tbody 
+        tr(ng-repeat="r in $ctrl.result track by $index")
+          td(ng-repeat="c in $ctrl.propsList track by $index")
+            {{ r[c.key] }}
+        
+  a(href="/dynamics-crm/dashboard" class="btn btn-primary pull-right") Back to dashboard

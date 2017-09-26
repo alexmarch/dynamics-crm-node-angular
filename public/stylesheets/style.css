@@ -1,0 +1,44 @@
+body {
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.dynamics-content-login {
+  text-align: center;
+}
+.dynamics-content-login h1 {
+  margin-bottom: 60px;
+}
+.entities {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  /* text-align: left; */
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.entityItem {
+  display: inline-block;
+  /* width: 190px; */
+  border: 1px solid #00B7FF;
+  padding: 40px;
+  vertical-align: bottom;
+  margin: 10px;
+}
+
+a.entityItem {
+  font-size: .7em;
+  text-decoration: none;
+  /* color: #ccc; */
+}
+.select-prop {
+  margin-bottom: 20px;
+}
+.btn-generate {
+  margin-bottom: 20px;
+}

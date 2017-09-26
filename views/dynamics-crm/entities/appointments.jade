@@ -1,0 +1,20 @@
+extends ../../layout
+
+block content
+  h1 Appointments
+  hr
+  table.table.table-striped.table-hover
+    thead.thead-inverse
+      tr
+        th Subject
+        th Location
+        th CreatedOn
+        th ActivityTypeCode
+    tbody 
+    - each item in value
+      tr
+        td= item.subject
+        td= item.location
+        td= item.createdon
+        td= item.activitytypecode
+  a(href="/dynamics-crm/dashboard" class="btn btn-primary pull-right") Back to dashboard

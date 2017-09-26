@@ -1,0 +1,28 @@
+extends ../../layout
+
+block content
+  h1 Contacts
+  hr
+  table.table.table-striped.table-hover
+    thead.thead-inverse
+      tr
+        th Phone
+        th Birthdate
+        th Email
+        th Url
+        th FirstName
+        th LastName
+        th Description
+        th JobTitle
+    tbody 
+    - each item in value
+      tr
+        td= item.mobilephone
+        td= item.birthdate
+        td= item.emailaddress1
+        td= item.websiteurl
+        td= item.firstname
+        td= item.lastname
+        td= item.description
+        td= item.jobtitle
+  a(href="/dynamics-crm/dashboard" class="btn btn-primary pull-right") Back to dashboard

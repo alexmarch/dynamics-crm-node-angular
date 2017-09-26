@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Dynamic CRM Objects
+  form(method='GET', action='/view')
+    select(name='object')
+      option(value='Accounts') Accounts
+      option(value='Appointments') Appointments
+      option(value='Campaigns') Campaigns
+      option(value='Cases') Cases
+      option(value='Contacts') Contacts
+      option(value='Email Messages') Email Messages
+      option(value='Leads') Leads
+      option(value='Letters') Letters
+      option(value='Opportunities') Opportunities
+      option(value='Phone Calls') Phone Calls
+      option(value='Social Profiles') Social Profiles
+      option(value='Tasks') Tasks
+      option(value='Users') Users
+    div
+      input(type='submit', class='btn btn-primary', value='Submit')

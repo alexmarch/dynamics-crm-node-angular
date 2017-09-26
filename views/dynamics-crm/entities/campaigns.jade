@@ -1,0 +1,22 @@
+extends ../../layout
+
+block content
+  h1 Campaigns
+  hr
+  table.table.table-striped.table-hover
+    thead.thead-inverse
+      tr
+        th Name
+        th CodeName
+        th BudgetedCost
+        th VersionNumber
+        th ActualEnd
+    tbody 
+    - each item in value
+      tr
+        td= item.name
+        td= item.codename
+        td= item.budgetedcost + ' USD'
+        td= item.versionnumber
+        td= item.actualend
+  a(href="/dynamics-crm/dashboard" class="btn btn-primary pull-right") Back to dashboard

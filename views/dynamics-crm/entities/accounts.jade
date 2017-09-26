@@ -1,0 +1,26 @@
+extends ../../layout
+
+block content
+  h1 Accounts
+  hr
+  table.table.table-striped.table-hover
+    thead.thead-inverse
+      tr
+        th Name
+        th Country
+        th City
+        th Address
+        th Fax
+        th PostCode
+        th Phone
+    tbody 
+    - each item in value
+      tr
+        td= item.name
+        td= item.address1_country
+        td= item.address1_city
+        td= item.address1_line1
+        td= item.fax
+        td= item.address1_postalcode
+        td= item.telephone1
+  a(href="/dynamics-crm/dashboard" class="btn btn-primary pull-right") Back to dashboard
